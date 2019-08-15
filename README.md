@@ -82,13 +82,10 @@ migrations are handled by the application
 1. Try upping the version number in the Dockerfile to the new version and start
    the application by running `docker-compose up --scale local=2`.
    This will create two keycloak nodes connecting to the same database.
-2. If the application starts without errors, everything is likely fine and the
-   new version can be pushed and deployed to a test environment and tested
-   further there. _If it is a new major version, you might want to test with a
-   clone of the real database if you're afraid or it is inconvenient to break
-   the test environment. The simplest way is to create a new RDS instance from a
-   snapshot of the database in the test environment and connect to that
-   locally._
+2. If the application starts without errors, everything is likely fine. To be
+   certain you probably want to test with a clone of an existing Keycloak
+   database before deploying the new image. Especially if it is a new major
+   version of Keycloak.
 3. If the application starts with errors, try running the migration scripts
    provided by Keycloak first. It will update the `standalone-ha.xml` file. Run
    the script in `Docker/run-migration-script.sh`. If the script runs
