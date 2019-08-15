@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:alpine
+    ports:
+     - "127.0.0.1:5432:5432"
+    environment:
+     - POSTGRES_PASSWORD=password
+     - POSTGRES_USER=user
+     - POSTGRES_DB=postgres
+  local:
+    build: '.'
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DB_USERNAME: 'user'
+      DB_CONNECTIONURL: 'jdbc:postgresql://db:5432/postgres'
+      DB_PASSWORD: 'password'
+    volumes:
+      - ./toRoot/themes/example-theme:/home/keycloak/keycloak/themes/example-theme
