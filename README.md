@@ -1,5 +1,6 @@
 # keycloak-docker
-Docker image containing Keycloak. Suited for running Keycloak as an ECS task.
+Docker image containing Keycloak. Especially suited for - but not limited to -
+running Keycloak as an ECS task.
 
 ## Run
 The image is by default configured to run in ECS. If running locally or in any
