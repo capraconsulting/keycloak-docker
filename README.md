@@ -1,4 +1,10 @@
 # keycloak-docker
+
+**ARCHIVED**: See various branches at https://github.com/keycloak/keycloak-containers
+for an improved way of running Keycloak in Docker.
+
+---
+
 Docker image containing Keycloak. Especially suited for - but not limited to -
 running Keycloak as an ECS task.
 
